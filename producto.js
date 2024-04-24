@@ -5,4 +5,4 @@ const despedida=(nombre)=>{
     return `Adios ${nombre}`        
 }
 
-module.exports={saludo,despedida}
+export  {saludo,despedida}

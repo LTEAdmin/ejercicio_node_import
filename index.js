@@ -1,16 +1,13 @@
 import express from "express";
+//importacion de archivo en forma destructurada
+import { saludo, despedida } from "./producto.js";
+console.log("Funcion " + saludo("Alejandra"));
+console.log("Funcion " + despedida("Alejandra"));
+
 const app = express();
-const port = 3000;
+const port = 3001;
 
-//traer funcion con comman js de otro archivo considerando que entrega un objeto y las funciones se aplicarian similar a metodos
-const producto = require('./producto.js');
-console.log('Funcion ' + producto.saludo('Alejandra'));
-console.log('Funcion ' + producto.despedida('Alejandra'));
 
-// acá se desestructura el objeto y el llamado es a traves de los nombres asignados
-const {saludo,despedida} = require('./producto.js');
-console.log('Funcion ' + saludo('Alejandra'));
-console.log('Funcion ' + despedida('Alejandra'));
 
 //primera ruta, en general deberia ser el main
 app.get('/', (req, res) => {
